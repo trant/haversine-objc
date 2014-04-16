@@ -12,23 +12,13 @@ extern float const HAVERSINE_KM_RADIUS;
 extern float const HAVERSINE_M_PER_KM;
 extern float const HAVERSINE_F_PER_MI;
 
-@interface Haversine : NSObject {
-  float lat1;
-  float lon1;
-  float lat2;
-  float lon2;
-}
+@interface Haversine : NSObject
+    
+@property CLLocationCoordinate2D point1;
+@property CLLocationCoordinate2D point2;
 
-@property float lat1;
-@property float lon1;
-@property float lat2;
-@property float lon2;
+- (id)initWithPoint1:(CLLocationCoordinate2D)point1 andPoint2:(CLLocationCoordinate2D)point2 ;
 
-- (id)init;
-- (id)initWithLat1:(float)newLat1
-              lon1:(float)newLon1
-              lat2:(float)newLat2
-              lon2:(float)newLon2;
 - (float)distance;
 - (float)toKilometers;
 - (float)toMeters;
